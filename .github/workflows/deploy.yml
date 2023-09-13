@@ -29,6 +29,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: production-files
+          working-directory: Web Ui
           path: ./dist
 
   deploy:
@@ -42,10 +43,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: production-files
+          working-directory: Web Ui
           path: ./dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+        working-directory: Web Ui
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
