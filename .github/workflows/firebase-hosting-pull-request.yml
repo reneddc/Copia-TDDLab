@@ -28,7 +28,7 @@ jobs:
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          working-directory: Web Ui
+          entryPoint: Web Ui
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_VITE_FIREBASE_HOSTING_FDAD1 }}'
           projectId: vite-firebase-hosting-fdad1
